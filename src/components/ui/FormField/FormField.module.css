@@ -1,0 +1,22 @@
+@reference "tailwindcss";
+
+.container {
+  @apply flex flex-col gap-2;
+}
+
+.label {
+  @apply text-sm;
+}
+
+.input {
+  @apply w-full
+    text-sm
+    border
+    border-white/10
+    bg-white/5
+    rounded-md
+    px-2.5
+    py-2
+    outline-none
+    focus:border-zinc-500;
+}
