@@ -1,16 +1,17 @@
+import type { ChangeEvent } from "react";
 import styles from "./FormField.module.css";
 
-interface Field {
+type Field = {
   label: string;
   id: string;
   name: string;
-  type: string;
-  value: number;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type: "text" | "number" | "date";
+  value: string | number;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
 }
 
-interface FieldProps {
+type FieldProps = {
   field: Field;
 }
 
