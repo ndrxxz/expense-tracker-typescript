@@ -1,0 +1,5 @@
+@reference "tailwindcss";
+
+.dsc {
+  @apply text-center py-10 text-zinc-500 text-sm;
+}
