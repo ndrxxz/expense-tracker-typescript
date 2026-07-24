@@ -16,28 +16,28 @@ interface SelectAttr {
 }
 
 interface SelectProps {
-  select: SelectAttr;
+  field: SelectAttr;
 }
 
-export default function Select({ select }: SelectProps) {
+export default function Select({ field }: SelectProps) {
   return (
     <div className={styles.container}>
-      <label htmlFor={select.id} className={styles.label}>
-        {select.label}
+      <label htmlFor={field.id} className={styles.label}>
+        {field.label}
       </label>
 
       <select
-        id={select.id}
-        name={select.name}
-        value={select.value}
-        onChange={select.onChange}
+        id={field.id}
+        name={field.name}
+        value={field.value}
+        onChange={field.onChange}
         className={styles.select}
       >
         <option value="" className={styles.placeholder} disabled>
           Choose an option
         </option>
 
-        {select.options.map((option) => (
+        {field.options.map((option) => (
           <option
             key={option.value}
             value={option.value}
