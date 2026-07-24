@@ -2,7 +2,11 @@ import { Button, FormField } from "@/components/ui";
 import styles from "./BudgetForm.module.css";
 import { useState } from "react";
 
-export default function BudgetForm() {
+interface BudgetFormProps {
+  onSetBudget: (budget: number) => void;
+}
+
+export default function BudgetForm({ onSetBudget }: BudgetFormProps) {
   const [budgetInput, setBudgetInput] = useState("");
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
@@ -10,6 +14,7 @@ export default function BudgetForm() {
 
     if (!budgetInput) return;
 
+    onSetBudget(parseFloat(budgetInput));
     setBudgetInput("");
   };
 
@@ -21,7 +26,7 @@ export default function BudgetForm() {
         field={{
           label: "Monthly budget (₱)",
           id: "input-budget",
-          name: "",
+          name: "budgetInput",
           type: "number",
           value: 0,
           onChange: (e) => setBudgetInput(e.target.value),
