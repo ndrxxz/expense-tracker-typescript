@@ -1,0 +1,31 @@
+@reference "tailwindcss";
+
+.container {
+  @apply flex flex-col gap-2;
+}
+
+.label {
+  @apply text-sm;
+}
+
+.select {
+  @apply w-full
+        text-sm
+        text-white
+        border
+        border-white/10
+        bg-zinc-900
+        rounded
+        px-2.5
+        py-2
+        outline-none
+        focus:border-zinc-500;
+}
+
+.placeholder {
+  @apply bg-zinc-900 text-white;
+}
+
+.option {
+  @apply bg-zinc-900 text-white;
+}
