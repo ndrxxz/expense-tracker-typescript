@@ -8,7 +8,7 @@ type Field = {
   type: "text" | "number" | "date";
   value: string | number;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder: string;
+  placeholder?: string;
 }
 
 type FieldProps = {
